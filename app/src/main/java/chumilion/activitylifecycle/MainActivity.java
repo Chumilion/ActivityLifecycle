@@ -8,24 +8,46 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
+    private TextView onCreateC;
+    private TextView onStartC;
+    private TextView onResumeC;
+    private TextView onPauseC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        onCreateC = (TextView) findViewById(R.id.onCreateCount);
+        onStartC = (TextView) findViewById(R.id.onStartCount);
+        onResumeC = (TextView) findViewById(R.id.onResumeCount);
+        onPauseC = (TextView) findViewById(R.id.onPauseCount);
+
+        onCreateC.setText((Integer.parseInt(onCreateC.getText() + "") + 1) + "");
+
+    }
+    protected void onStart() {
+        super.onStart();
+        setContentView(R.layout.activity_main);
+
+        onStartC.setText((Integer.parseInt(onStartC.getText() + "") + 1) + "");
+    }
+    protected void onResume() {
+        super.onResume();
+        setContentView(R.layout.activity_main);
+
+        onResumeC.setText((Integer.parseInt(onResumeC.getText() + "") + 1) + "");
+    }
+
+    protected void onPause() {
+        super.onPause();
+        setContentView(R.layout.activity_main);
+
+        onPauseC.setText((Integer.parseInt(onPauseC.getText() + "") + 1) + "");
     }
 
     @Override

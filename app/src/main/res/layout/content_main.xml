@@ -9,6 +9,91 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
-    <TextView android:text="Hello World!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/onCreateCount"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="0"
+        android:textSize="20pt"
+        android:gravity="center"
+        android:background="#27b"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+    <TextView
+        android:id="@+id/onCreateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="onCreate"
+        android:textSize="15pt"
+        android:gravity="center"
+        android:layout_alignTop="@id/onCreateCount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/onStartCount"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="0"
+        android:textSize="20pt"
+        android:gravity="center"
+        android:background="#38c"
+        android:layout_below="@+id/onCreateCount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+    <TextView
+        android:id="@+id/onStartLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="onStart"
+        android:textSize="15pt"
+        android:gravity="center"
+        android:layout_alignTop="@id/onStartCount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/onResumeCount"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="0"
+        android:textSize="20pt"
+        android:gravity="center"
+        android:background="#49d"
+        android:layout_below="@id/onStartCount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+    <TextView
+        android:id="@+id/onResumeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="onResume"
+        android:textSize="15pt"
+        android:gravity="center"
+        android:layout_alignTop="@id/onResumeCount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/onPauseCount"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="0"
+        android:textSize="20pt"
+        android:gravity="center"
+        android:background="#5ae"
+        android:layout_below="@id/onResumeCount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+    <TextView
+        android:id="@+id/onPauseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="onPause"
+        android:textSize="15pt"
+        android:gravity="center"
+        android:layout_alignTop="@id/onPauseCount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
 </RelativeLayout>

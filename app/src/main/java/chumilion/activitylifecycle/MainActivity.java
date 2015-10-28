@@ -1,5 +1,7 @@
 package chumilion.activitylifecycle;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -30,12 +32,16 @@ public class MainActivity extends AppCompatActivity
     int onStopint = 0;
     int onRestartint = 0;
     int onDestroyint = 0;
+    SharedPreferences.Editor mySPEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences mySP = getPreferences(Context.MODE_PRIVATE);
+        mySPEditor = mySP.edit();
 
         onCreateC = (TextView) findViewById(R.id.onCreateCount);
         onStartC = (TextView) findViewById(R.id.onStartCount);
@@ -45,9 +51,19 @@ public class MainActivity extends AppCompatActivity
         onRestartC = (TextView) findViewById(R.id.onRestartCount);
         onDestroyC = (TextView) findViewById(R.id.onDestroyCount);
 
+        onCreateint = mySP.getInt("onCreateint", 0);
+        onStartint = mySP.getInt("onStartint", 0);
+        onResumeint = mySP.getInt("onResumeint", 0);
+        onPauseint = mySP.getInt("onPauseint", 0);
+        onStopint = mySP.getInt("onStopint", 0);
+        onRestartint = mySP.getInt("onRestartint", 0);
+        onDestroyint = mySP.getInt("onDestroyint", 0);
+
         onCreateint++;
         Log.i("onCreate", onCreateint + "");
         Log.i("onCreate", onCreateC + "");
+        mySPEditor.putInt("onCreateint", onCreateint);
+
         onCreateC.setText(onCreateint + "");
         onStartC.setText(onStartint + "");
         onResumeC.setText(onResumeint + "");
@@ -63,6 +79,7 @@ public class MainActivity extends AppCompatActivity
 
         onStartint++;
         Log.i("onStart", onStartint + "");
+        mySPEditor.putInt("onStartint", onStartint);
 
         onStartC.setText(onStartint + "");
     }
@@ -71,6 +88,7 @@ public class MainActivity extends AppCompatActivity
 
         onResumeint++;
         Log.i("onResume", onResumeint + "");
+        mySPEditor.putInt("onResumeint", onResumeint);
 
         onResumeC.setText(onResumeint + "");
     }
@@ -80,8 +98,10 @@ public class MainActivity extends AppCompatActivity
 
         onPauseint++;
         Log.i("onPause", onPauseint + "");
+        mySPEditor.putInt("onPauseint", onPauseint);
 
         onPauseC.setText(onPauseint + "");
+        mySPEditor.commit();
     }
 
     protected void onStop() {
@@ -89,25 +109,31 @@ public class MainActivity extends AppCompatActivity
 
         onStopint++;
         Log.i("onStart", onStopint + "");
+        mySPEditor.putInt("onStopint", onStopint);
 
-        onStartC.setText(onStopint + "");
+        onStopC.setText(onStopint + "");
+        mySPEditor.commit();
     }
     protected void onRestart() {
         super.onResume();
 
         onRestartint++;
         Log.i("onResume", onRestartint + "");
+        mySPEditor.putInt("onResumeint", onResumeint);
 
-        onResumeC.setText(onRestartint + "");
+        onRestartC.setText(onRestartint + "");
+        mySPEditor.commit();
     }
 
     protected void onDestroy() {
-        super.onPause();
+        super.onDestroy();
 
         onDestroyint++;
-        Log.i("onPause", onDestroyint + "");
+        Log.i("onDestroy", onDestroyint + "");
+        mySPEditor.putInt("onDestroyint", onDestroyint);
 
-        onPauseC.setText(onDestroyint + "");
+        onDestroyC.setText(onDestroyint + "");
+        mySPEditor.commit();
     }
 
     @Override

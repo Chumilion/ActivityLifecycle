@@ -27,8 +27,7 @@
         android:textSize="15pt"
         android:gravity="center"
         android:layout_alignTop="@id/onCreateCount"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/onStartCount"
@@ -48,8 +47,7 @@
         android:textSize="15pt"
         android:gravity="center"
         android:layout_alignTop="@id/onStartCount"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/onResumeCount"
@@ -69,8 +67,7 @@
         android:textSize="15pt"
         android:gravity="center"
         android:layout_alignTop="@id/onResumeCount"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/onPauseCount"
@@ -90,8 +87,7 @@
         android:textSize="15pt"
         android:gravity="center"
         android:layout_alignTop="@id/onPauseCount"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/onStopCount"
@@ -111,8 +107,7 @@
         android:textSize="15pt"
         android:gravity="center"
         android:layout_alignTop="@id/onStopCount"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/onRestartCount"
@@ -132,8 +127,7 @@
         android:textSize="15pt"
         android:gravity="center"
         android:layout_alignTop="@id/onRestartCount"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/onDestroyCount"
@@ -153,7 +147,6 @@
         android:textSize="15pt"
         android:gravity="center"
         android:layout_alignTop="@id/onDestroyCount"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
